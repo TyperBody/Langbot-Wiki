@@ -32,6 +32,7 @@ class PersonMessageReceived(BaseEventModel):
     message_chain: platform_message.MessageChain = pydantic.Field(
         serialization_alias="message_chain"
     )
+    """消息链"""
 
 
 class GroupMessageReceived(BaseEventModel):
@@ -51,6 +52,7 @@ class GroupMessageReceived(BaseEventModel):
     message_chain: platform_message.MessageChain = pydantic.Field(
         serialization_alias="message_chain"
     )
+    """消息链"""
 ```
 
 ### *NormalMessageReceived
@@ -71,6 +73,11 @@ class PersonNormalMessageReceived(BaseEventModel):
 
     text_message: str
     """消息文本"""
+
+    message_chain: platform_message.MessageChain = pydantic.Field(
+        serialization_alias="message_chain"
+    )
+    """消息链"""
 
     # ========== 可设置的属性 ==========
 
@@ -94,6 +101,11 @@ class GroupNormalMessageReceived(BaseEventModel):
 
     text_message: str
     """消息文本"""
+
+    message_chain: platform_message.MessageChain = pydantic.Field(
+        serialization_alias="message_chain"
+    )
+    """消息链"""
 
     # ========== 可设置的属性 ==========
 

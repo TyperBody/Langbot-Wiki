@@ -32,7 +32,7 @@ class PersonMessageReceived(BaseEventModel):
     message_chain: platform_message.MessageChain = pydantic.Field(
         serialization_alias="message_chain"
     )
-
+    """Raw message chain"""
 
 class GroupMessageReceived(BaseEventModel):
     """When any group chat message is received"""
@@ -51,6 +51,7 @@ class GroupMessageReceived(BaseEventModel):
     message_chain: platform_message.MessageChain = pydantic.Field(
         serialization_alias="message_chain"
     )
+    """Raw message chain"""
 ```
 
 ### *NormalMessageReceived
@@ -71,6 +72,11 @@ class PersonNormalMessageReceived(BaseEventModel):
 
     text_message: str
     """Message text"""
+
+    message_chain: platform_message.MessageChain = pydantic.Field(
+        serialization_alias="message_chain"
+    )
+    """Raw message chain"""
 
     # ========== Settable Attributes ==========
 
@@ -93,6 +99,11 @@ class GroupNormalMessageReceived(BaseEventModel):
 
     text_message: str
     """Message text"""
+
+    message_chain: platform_message.MessageChain = pydantic.Field(
+        serialization_alias="message_chain"
+    )
+    """Raw message chain"""
 
     # ========== Settable Attributes ==========
 
