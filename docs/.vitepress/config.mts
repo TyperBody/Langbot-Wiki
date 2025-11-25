@@ -1,4 +1,17 @@
 import { defineConfig } from "vitepress";
+import { useSidebar } from "vitepress-openapi";
+import specZh from '../assets/service-api-openapi-zh.json' with { type: 'json' }
+import specEn from '../assets/service-api-openapi-en.json' with { type: 'json' }
+
+const sidebarZh = useSidebar({
+  spec: specZh,
+  linkPrefix: '/zh/tags/',
+})
+
+const sidebarEn = useSidebar({
+  spec: specEn,
+  linkPrefix: '/en/tags/',
+})
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -46,6 +59,7 @@ export default defineConfig({
                 text: "部署 LangBot",
                 collapsed: true,
                 items: [
+                  { text: "包管理器部署", link: "/zh/deploy/langbot/package" },
                   { text: "Docker部署", link: "/zh/deploy/langbot/docker" },
                   {
                     text: "1Panel面板部署",
@@ -108,6 +122,10 @@ export default defineConfig({
                         text: "对外客服",
                         link: "/zh/deploy/platforms/wecom/wecomcs",
                       },
+                      {
+                        text: "智能机器人",
+                        link: "/zh/deploy/platforms/wecom/wecombot",
+                      }
                     ],
                   },
                   {
@@ -126,6 +144,7 @@ export default defineConfig({
                   { text: "Discord", link: "/zh/deploy/platforms/discord" },
                   { text: "Telegram", link: "/zh/deploy/platforms/telegram" },
                   { text: "Slack", link: "/zh/deploy/platforms/slack" },
+                  { text: "LINE", link: "/zh/deploy/platforms/line" },
                 ],
               },
               {
@@ -139,11 +158,18 @@ export default defineConfig({
                 items: [
                   { text: "Dify", link: "/zh/deploy/pipelines/dify" },
                   { text: "n8n", link: "/zh/deploy/pipelines/n8n" },
+                  { text: "Langflow", link: "/zh/deploy/pipelines/langflow" },
+                  { text: "TBox", link: "/zh/deploy/pipelines/tbox" },
+                  { text: "Coze", link: "/zh/deploy/pipelines/coze" },
                 ],
               },
               {
                 text: "使用知识库",
                 link: "/zh/deploy/knowledge/readme",
+              },
+              {
+                text: "使用 MCP 服务",
+                link: "zh/deploy/mcp/readme"
               },
               {
                 text: "系统环境设置",
@@ -169,10 +195,38 @@ export default defineConfig({
                 collapsed: true,
                 items: [
                   { text: "基础教程", link: "/zh/plugin/dev/tutor" },
-                  { text: "消息平台实体", link: "/zh/plugin/dev/messages" },
-                  { text: "API 参考", link: "/zh/plugin/dev/api-ref" },
+                  { text: "完善配置信息", link: "/zh/plugin/dev/basic-info" },
+                  { text: "目录规范", link: "/zh/plugin/dev/directory-structure" },
+                  {
+                    text: "组件开发",
+                    collapsed: true,
+                    items: [
+                      { text: "添加组件", link: "/zh/plugin/dev/components/add" },
+                      { text: "组件：事件监听器", link: "/zh/plugin/dev/components/event-listener" },
+                      { text: "组件：命令", link: "/zh/plugin/dev/components/command" },
+                      { text: "组件：工具", link: "/zh/plugin/dev/components/tool" },
+                    ],
+                  },
+                  {
+                    text: "API 参考",
+                    collapsed: true,
+                    items: [
+                      { text: "插件通用 API", link: "/zh/plugin/dev/apis/common" },
+                      { text: "流水线事件", link: "/zh/plugin/dev/apis/pipeline-events" },
+                      { text: "消息平台实体", link: "/zh/plugin/dev/apis/messages" },
+                    ],
+                  },
+                  { text: "迁移指南", link: "/zh/plugin/dev/migration" },
+                  {
+                    text: "分发插件", collapsed: true,
+                    items: [
+                      { text: "发布到插件市场", link: "/zh/plugin/dev/publish/market" },
+                      { text: "通过 GitHub 分发", link: "/zh/plugin/dev/publish/github" },
+                    ]
+                  },
                 ],
               },
+              { text: "系统兼容处理", link: "/zh/plugin/compatibility" },
             ],
           },
           {
@@ -183,16 +237,20 @@ export default defineConfig({
                 link: "/zh/workshop/impl-platform-adapter",
               },
               {
-                text: "在 LangBot 接入完整 MCP 生态",
-                link: "/zh/workshop/mcp-details"
-              },
-              {
                 text: "容器网络配置详解",
                 link: "/zh/workshop/network-details",
               },
               {
+                text: "使用 New API 中转多种渠道模型",
+                link: "/zh/workshop/newapi-integration"
+              },
+              {
                 text: "接入来自胜算云的模型",
                 link: "/zh/workshop/shengsuanyun-integration"
+              },
+              {
+                text: "接入来自小马算力的模型",
+                link: "/zh/workshop/tokenpony-integration"
               },
               {
                 text: "接入 PPIO API 的模型",
@@ -205,10 +263,23 @@ export default defineConfig({
             ],
           },
           {
+            text: "[Beta] Service API 参考",
+            items: [
+              { text: "概述", link: "/zh/tags/readme" },
+              ...sidebarZh.generateSidebarGroups({
+                linkPrefix: '/zh/tags/',
+              }).map(group => ({
+                ...group,
+                collapsed: true, // Collapsible and open by default.
+              })),
+            ],
+          },
+          {
             text: "开发",
             items: [
               { text: "开发配置", link: "/zh/develop/dev-config" },
               { text: "组件架构", link: "/zh/develop/comp-arch" },
+              { text: "插件运行时", link: "/zh/develop/plugin-runtime" },
               {
                 text: "适配器开发",
                 collapsed: true,
@@ -274,6 +345,7 @@ export default defineConfig({
                 text: "Deploy LangBot",
                 collapsed: true,
                 items: [
+                  { text: "Package Manager Deployment", link: "/en/deploy/langbot/package" },
                   { text: "Docker Deployment", link: "/en/deploy/langbot/docker" },
                   {
                     text: "1Panel Deployment",
@@ -294,6 +366,7 @@ export default defineConfig({
                   { text: "Discord", link: "/en/deploy/platforms/discord" },
                   { text: "Telegram", link: "/en/deploy/platforms/telegram" },
                   { text: "Slack", link: "/en/deploy/platforms/slack" },
+                  { text: "LINE", link: "/en/deploy/platforms/line" },
                   { text: "Lark", link: "/en/deploy/platforms/lark" },
                   { text: "DingTalk", link: "/en/deploy/platforms/dingtalk" },
                   {
@@ -340,6 +413,10 @@ export default defineConfig({
                         text: "External Customer Service",
                         link: "/en/deploy/platforms/wecom/wecomcs",
                       },
+                      {
+                        text: "Intelligent Bot",
+                        link: "/en/deploy/platforms/wecom/wecombot",
+                      }
                     ],
                   },
                   { text: "WeChat Official Account", link: "/en/deploy/platforms/wxoa" },
@@ -356,11 +433,16 @@ export default defineConfig({
                 items: [
                   { text: "Dify", link: "/en/deploy/pipelines/dify" },
                   { text: "n8n", link: "/en/deploy/pipelines/n8n" },
+                  { text: "Langflow", link: "/en/deploy/pipelines/langflow" },
                 ],
               },
               {
                 text: "Using Knowledge Base",
                 link: "/en/deploy/knowledge/readme",
+              },
+              {
+                text: "Using MCP Services",
+                link: "/en/deploy/mcp/readme",
               },
               {
                 text: "System Settings",
@@ -385,10 +467,38 @@ export default defineConfig({
                 collapsed: true,
                 items: [
                   { text: "Basic Tutorial", link: "/en/plugin/dev/tutor" },
-                  { text: "Message Platform Entities", link: "/en/plugin/dev/messages" },
-                  { text: "API Reference", link: "/en/plugin/dev/api-ref" },
+                  { text: "Complete Plugin Configuration Information", link: "/en/plugin/dev/basic-info" },
+                  { text: "Directory Structure", link: "/en/plugin/dev/directory-structure" },
+                  {
+                    text: "Component Development",
+                    collapsed: true,
+                    items: [
+                      { text: "Adding Components", link: "/en/plugin/dev/components/add" },
+                      { text: "Component: Event Listener", link: "/en/plugin/dev/components/event-listener" },
+                      { text: "Component: Command", link: "/en/plugin/dev/components/command" },
+                      { text: "Component: Tool", link: "/en/plugin/dev/components/tool" },
+                    ],
+                  },
+                  {
+                    text: "API Reference",
+                    collapsed: true,
+                    items: [
+                      { text: "Plugin Common APIs", link: "/en/plugin/dev/apis/common" },
+                      { text: "Pipeline Events", link: "/en/plugin/dev/apis/pipeline-events" },
+                      { text: "Message Platform Entities", link: "/en/plugin/dev/apis/messages" },
+                    ],
+                  },
+                  { text: "Migration Guide", link: "/en/plugin/dev/migration" },
+                  {
+                    text: "Distribute Plugin", collapsed: true,
+                    items: [
+                      { text: "Publish to Marketplace", link: "/en/plugin/dev/publish/market" },
+                      { text: "Distribute via GitHub", link: "/en/plugin/dev/publish/github" },
+                    ]
+                  },
                 ],
               },
+              { text: "System Compatibility", link: "/en/plugin/compatibility" },
             ],
           },
           {
@@ -398,13 +508,17 @@ export default defineConfig({
                 text: "How to Implement a Message Platform Adapter?",
                 link: "/en/workshop/impl-platform-adapter",
               },
-              {
-                text: "Integrating Complete MCP Ecosystem in LangBot",
-                link: "/en/workshop/mcp-details"
-              },
+              // {
+              //  text: "Integrating Complete MCP Ecosystem in LangBot",
+              // link: "/en/workshop/mcp-details"
+              // },
               {
                 text: "Container Network Configuration Details",
                 link: "/en/workshop/network-details",
+              },
+              {
+                text: "Using New API to Transmit Models from Multiple Channels",
+                link: "/en/workshop/newapi-integration"
               },
               {
                 text: "Integrating PPIO API Model",
@@ -417,10 +531,23 @@ export default defineConfig({
             ],
           },
           {
+            text: "[Beta] Service API Reference",
+            items: [
+              { text: "Overview", link: "/en/tags/readme" },
+              ...sidebarEn.generateSidebarGroups({
+                linkPrefix: '/en/tags/',
+              }).map(group => ({
+                ...group,
+                collapsed: true,
+              })),
+            ],
+          },
+          {
             text: "Development",
             items: [
               { text: "Development Configuration", link: "/en/develop/dev-config" },
               { text: "Component Architecture", link: "/en/develop/comp-arch" },
+              { text: "Plugin Runtime", link: "/en/develop/plugin-runtime" },
             ],
           },
         ],

@@ -10,12 +10,13 @@ LangBot is an open-source LLM native instant messaging robot development platfor
 | QQ Official API | ✅ |  |
 | WeCom | ✅ |  |
 | WeComCS | ✅ |  |
+| WeComIntelligentBot | ✅ | Support streaming output |
 | Lark | ✅ | Support streaming output |
 | DingTalk | ✅ | Support streaming output |
 | Discord | ✅ |  |
 | Telegram | ✅ | Support streaming output |
 | Slack | ✅ |  |
-| LINE | 🚧 |  |
+| LINE | ✅ |  |
 | WhatsApp | 🚧 |  |
 
 🚧: In development
@@ -32,6 +33,8 @@ LangBot is an open-source LLM native instant messaging robot development platfor
 | [Zhipu AI](https://open.bigmodel.cn/) | ✅ |  |
 | [CompShare](https://www.compshare.cn/?ytag=GPU_YY-gh_langbot) | ✅ | LLM and GPU resource platform |
 | [Dify](https://dify.ai) | ✅ | LLMOps platform |
+| [n8n](https://n8n.io/) | ✅ | LLMOps platform |
+| [Langflow](https://langflow.org/) | ✅ | LLMOps platform |
 | [PPIO](https://ppio.com/user/register?invited_by=QJKFYD&utm_source=github_langbot) | ✅ | LLM and GPU resource platform |
 | [ShengSuanYun](https://www.shengsuanyun.com/login?code=7DS2QLH5) | ✅ | LLM and GPU resource platform |
 | [302.AI](https://share.302.ai/SuTG99) | ✅ | LLM gateway(MaaS) |
@@ -43,6 +46,7 @@ LangBot is an open-source LLM native instant messaging robot development platfor
 | [Aliyun Bailian](https://bailian.console.aliyun.com/) | ✅ | LLM gateway(MaaS), LLMOps platform |
 | [Volc Engine Ark](https://console.volcengine.com/ark/region:ark+cn-beijing/model?vendor=Bytedance&view=LIST_VIEW) | ✅ | LLM gateway(MaaS), LLMOps platform |
 | [ModelScope](https://modelscope.cn/docs/model-service/API-Inference/intro) | ✅ | LLM gateway(MaaS) |
+| [Coze](https://coze.com) | ✅ | LLMOps platform |
 
 ## LLM Application Paradigm Implementation
 

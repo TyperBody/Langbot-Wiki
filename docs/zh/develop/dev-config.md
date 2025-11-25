@@ -10,7 +10,7 @@ LangBot 分为前端和后端，前端使用 Next.js + shadcn 开发，后端通
 
 ```bash
 pip install uv
-uv sync
+uv sync --dev
 ```
 
 启动后端
@@ -44,7 +44,13 @@ copy .env.example .env
 ```bash
 pnpm install
 pnpm dev
+
+# 若未安装pnpm，也可以使用npm来解决依赖并启动
+npm install
+npm run dev
 ```
+
+然后根据输出信息，访问`http://127.0.0.1:3000`查看独立启动的前端页面。
 
 :::info
 本地使用`pnpm dev`启动时，会携带`.env`中的环境变量`NEXT_PUBLIC_API_BASE_URL`，该变量会自动被前端使用，以确保前端可以访问到本地启动的后端的`5300`端口。

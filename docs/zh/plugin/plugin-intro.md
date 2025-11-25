@@ -1,66 +1,52 @@
-# 插件介绍
+# LangBot 插件
 
-:::info 目录
-[[toc]]
-:::
+LangBot 内部由多种组件组成，如大模型工具、命令、消息平台适配器、大模型请求器等。为了满足扩展性和灵活性的需求，我们实现了一套生产级的插件系统。
 
-## 插件分类
+每个插件被运行在独立的进程中，由 Plugin Runtime 统一管理。
 
-**插件**，是LangBot的扩展模块，其中包含**事件监听器**和**内容函数**两种可执行内容。事件监听器由主程序运行中的事件驱动，而内容函数由GPT生成的内容驱动。这两种驱动方式都统一包装在插件类中。
+<img width="600" src="/assets/image/zh/plugin/dev/plugin_system_arch.png" />
 
-### 事件监听器
+## 插件结构
 
-插件监听 LangBot 运行期间的各种事件，LangBot 在事件发生时，携带事件相关信息调用插件注册的监听器。插件可以通过注册监听器以在指定情况下被触发。
+插件根据具体功能可提供以下组件：
 
-### 内容函数
+- 事件处理器：监听流水线执行期间的事件，对上下文或流水线进行修改。
+- 命令：由用户通过`!`（或其他已设置的前缀）开头的命令消息触发。
+- 工具：供 LangBot 内置的 Local Agent 在执行期间由 LLM 调用。
 
-内容函数不同于 通过事件触发插件，而是在对话期间，当对话内容符合内容函数的描述时，由 GPT 指定要调用的函数，并由 LangBot 进行调用。
-这是基于 [GPT的Function Calling能力](https://platform.openai.com/docs/guides/gpt/function-calling) 实现的，这是一种嵌入对话中，由GPT自动调用的函数。
+后续还将支持更多组件的插件化。
 
-> 就是 ChatGPT官方插件 那种东西
+## 安装插件
 
-例如我们为GPT提供一个函数`access_the_web`，并提供其详细的描述以及其参数的描述，那么当我们在与GPT对话时涉及类似以下内容时：
+目前支持上传插件包安装、从插件市场安装以及从 GitHub Release 安装插件。  
+在 LangBot 的插件管理页面，点击右上角即可选择安装方式
 
-```
-Q: 请搜索一下github上有那些QQ机器人项目？
-Q: 请为我搜索一些不错的云服务商网站？
-Q：阅读并总结这篇文章：https://zhuanlan.zhihu.com/p/607570830
-Q：搜一下清远今天天气如何
-```
+<img width="600" src="/assets/image/zh/plugin/install_method.png" />
 
-GPT将会回复一个对`access_the_web`的函数调用请求，LangBot将调用插件提供的内容函数，并返回调用结果给GPT使其生成新的回复。  
-当然，函数调用功能不止局限于网络访问，还可以实现图片处理、科学计算、行程规划等需要调用函数的功能，理论上我们可以通过内容函数实现与`ChatGPT Plugins`相同的功能。
+点击本地安装，选择他人分享的或从 Marketplace 下载的`.lbpkg`文件，即可安装插件。
 
-## 插件用法
+或点击插件市场 Tab，选择插件后点击安装。
 
-### 安装
+<img width="600" src="/assets/image/zh/plugin/install_from_marketplace.png" />
 
-> 这里只是给出了插件的基本安装方法，详细需查看各插件文档或咨询其开发者
+安装插件后，您需要到流水线配置中，选择所需要使用的插件。
 
-#### 从插件 GitHub 仓库安装
+<img width="600" src="/assets/image/zh/plugin/pipeline_extensions.png" />
 
-在 WebUI 的插件管理页面，点击 `安装` 按钮，输入插件的 GitHub 仓库地址，点击 `安装` 按钮即可。
+## 插件管理
 
-#### 来自插件市场
+### 插件配置项
 
-从 WebUI 的插件管理页面中的插件市场中安装。
+某些插件可能会要求您填入特定的配置项（请参考插件 README 说明），请点击插件卡片进入插件详情页，按照提示获取并输入。
 
-#### 手动安装
+<img width="600" src="/assets/image/zh/plugin/plugin_config.png" />
 
-将获取到的插件程序放置到`plugins`目录下，具体使用方式请查看各插件文档或咨询其开发者。
+### 更新插件
 
-### 管理
+仅支持更新从插件市场安装的插件。
 
-#### !plugin 命令
+<img width="600" src="/assets/image/zh/plugin/update_plugin.png" />
 
-```
-!plugin                    列出所有已安装的插件
-!plugin get <储存库地址>    从GitHub储存库地址安装插件(需要管理员权限)
-!plugin update all         更新所有插件(需要管理员权限，仅支持从储存库安装的插件)
-!plugin update <插件名>    更新指定插件
-!plugin del <插件名>       删除插件(需要管理员权限)
-!plugin on <插件名>        启用插件(需要管理员权限)
-!plugin off <插件名>       禁用插件(需要管理员权限)
+## 插件市场
 
-!func                      列出所有内容函数
-```
+插件市场可以从 LangBot 内部的`插件管理`页面进入，也可以访问独立站点[LangBot 插件市场](https://space.langbot.app/market)。

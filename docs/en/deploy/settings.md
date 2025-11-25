@@ -34,46 +34,36 @@ concurrency:
     # Single session concurrency
     session: 1
 
-# MCP configuration
-# Should be configurable in WebUI in the future
-mcp:
-    # MCP server list
-    # Currently supports two protocol MCP servers:
-    # - SSE
-    # - Stdio (Python)
-    # 
-    # Format:
-    # SSE mode:
-    #    name Server name, self-defined
-    #    enable Whether to enable this Server
-    #    mode Fixed as sse
-    #    url MCP SSE Server access URL
-    #    headers Connection headers, optional
-    #    timeout Connection timeout
-    # 
-    # stdio mode:
-    #    name Server name, self-defined
-    #    enable Whether to enable this Server
-    #    mode Fixed as stdio
-    #    command Execution command
-    #    args Command parameters
-    #    env Command environment variables, optional
-    #
-    # For example:
-    # servers:
-    #   - name: 'SSE Server'
-    #     enable: true
-    #     mode: sse
-    #     url: 'http://127.0.0.1:8000/sse'
-    #     headers: {}
-    #     timeout: 10
-    #   - name: 'stdio Server'
-    #     enable: true
-    #     mode: stdio
-    #     command: 'python'
-    #     args: ['-m', 'weather']
-    #     env: {}
-    servers: []
+# Database configuration
+database:
+    # The database to use
+    # Supported databases:
+    # - sqlite (local SQLite database, default)
+    # - postgresql (PostgreSQL database, please configure below)
+    use: sqlite
+    # SQLite configuration
+    sqlite:
+        path: 'data/langbot.db'
+    # PostgreSQL configuration
+    postgresql:
+        host: '127.0.0.1'
+        port: 5432
+        database: 'postgres'
+        user: 'postgres'
+        password: 'postgres'
+
+# Plugin system configuration
+plugin:
+    # Whether to enable the plugin system
+    enable: true
+    # Plugin runtime WebSocket address
+    # Default value for Docker environment
+    # If you want to use a standalone Plugin Runtime, please refer to https://docs.langbot.app/en/develop/plugin-runtime.html
+    runtime_ws_url: 'ws://langbot_plugin_runtime:5400/control/ws'
+    # Whether to enable the plugin marketplace
+    enable_marketplace: true
+    # Plugin marketplace URL
+    cloud_service_url: 'https://space.langbot.app'
 
 # Proxy configuration
 proxy:
@@ -86,6 +76,21 @@ proxy:
     http: ''
     https: ''
 
+# Object storage configuration
+storage:
+    # The object storage to use
+    # Supported object storage:
+    # - local (local storage, default)
+    # - s3 (S3 protocol object storage, supports R2, MinIO, etc. Please configure below)
+    use: local
+    # S3 configuration
+    s3:
+        endpoint_url: ''
+        access_key_id: ''
+        secret_access_key: ''
+        region: 'us-east-1'
+        bucket: 'langbot-storage'
+
 # System configuration
 system:
     # JWT configuration
@@ -94,4 +99,37 @@ system:
         expire: 604800
         # JWT secret key, a key will be automatically generated on first startup
         secret: 'xxxx'
+
+# Vector database configuration
+vdb:
+    # The vector database to use
+    # Supported vector databases:
+    # - chroma (default, embedded vector database)
+    # - qdrant (external vector database, please configure below)
+    use: chroma
+    # Qdrant configuration
+    qdrant:
+        # Qdrant URL
+        url: ''
+        # Qdrant Host
+        host: localhost
+        # Qdrant Port
+        port: 6333
+        # Qdrant API Key
+        api_key: ''
 ```
+
+## Set configuration via environment variables
+
+The configuration in `config.yaml` can be set via environment variables. The environment variable name is uppercase letters, using double underscores to connect, for example: `API__PORT` represents `api.port`.
+
+- `API__PORT` represents `api.port`
+- `CONCURRENCY__PIPELINE` represents `concurrency.pipeline`
+- `CONCURRENCY__SESSION` represents `concurrency.session`
+- `DATABASE__POSTGRESQL__DATABASE` represents `database.postgresql.database`
+- `DATABASE__POSTGRESQL__HOST` represents `database.postgresql.host`
+- `DATABASE__SQLITE__PATH` represents `database.sqlite.path`
+
+...
+
+When starting, LangBot will read all environment variables and apply the corresponding configuration to `config.yaml` and write to the `data/config.yaml` file.

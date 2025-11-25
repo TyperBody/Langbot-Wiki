@@ -9,6 +9,7 @@ LangBot 是一个开源的大语言模型原生即时通信机器人开发平台
 | QQ 个人号 | ✅ | 由支持 onebot11 协议的第三方应用端支持，支持 QQ 个人号私聊、群聊 |
 | QQ 官方机器人 | ✅ | QQ 官方机器人，支持频道、私聊、群聊 |
 | 企业微信 | ✅ |  |
+| 企微智能机器人 | ✅ | 支持流式输出 |
 | 企微对外客服 | ✅ |  |
 | 微信公众号 | ✅ |  |
 | 飞书 | ✅ | 支持流式输出 |
@@ -16,7 +17,7 @@ LangBot 是一个开源的大语言模型原生即时通信机器人开发平台
 | Discord | ✅ |  |
 | Telegram | ✅ | 支持流式输出 |
 | Slack | ✅ |  |
-| LINE | 🚧 |  |
+| LINE | ✅ |  |
 | WhatsApp | 🚧 |  |
 
 🚧: 正在开发中
@@ -37,6 +38,8 @@ LangBot 是一个开源的大语言模型原生即时通信机器人开发平台
 | [302.AI](https://share.302.ai/SuTG99) | ✅ | 大模型聚合平台 |
 | [Google Gemini](https://aistudio.google.com/prompts/new_chat) | ✅ | |
 | [Dify](https://dify.ai) | ✅ | LLMOps 平台 |
+| [n8n](https://n8n.io/) | ✅ | LLMOps 平台 |
+| [Langflow](https://langflow.org/) | ✅ | LLMOps 平台 |
 | [Ollama](https://ollama.com/) | ✅ | 本地大模型运行平台 |
 | [LMStudio](https://lmstudio.ai/) | ✅ | 本地大模型运行平台 |
 | [GiteeAI](https://ai.gitee.com/) | ✅ | 大模型接口聚合平台 |
@@ -44,6 +47,8 @@ LangBot 是一个开源的大语言模型原生即时通信机器人开发平台
 | [阿里云百炼](https://bailian.console.aliyun.com/) | ✅ | 大模型聚合平台, LLMOps 平台 |
 | [火山方舟](https://console.volcengine.com/ark/region:ark+cn-beijing/model?vendor=Bytedance&view=LIST_VIEW) | ✅ | 大模型聚合平台, LLMOps 平台 |
 | [ModelScope](https://modelscope.cn/docs/model-service/API-Inference/intro) | ✅ | 大模型聚合平台 |
+| [TBox（蚂蚁百宝箱）](https://tbox.cn/) | ✅ | LLMOps 平台 |
+| [Coze](https://coze.cn) | ✅ | LLMOps 平台 |
 
 ## LLM 应用范式实现
 

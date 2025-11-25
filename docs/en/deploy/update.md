@@ -1,14 +1,34 @@
 # Update LangBot
 
+## Using Package Manager
+
+Please execute in the directory you deployed LangBot again:
+
+```bash
+uvx langbot@latest
+```
+
+This command will download and start the latest version of LangBot.
+
 ## Using Docker (or one-click deployment based on Docker)
 
-Please execute in the `docker-compose.yaml` directory:
+Please execute in the directory you cloned LangBot:
+
+```bash
+git pull
+```
+
+Please execute in the `docker/` directory:
 
 ```bash
 docker compose up --force-recreate --pull always -d
 ```
 
 This command will pull the latest LangBot image and rebuild the container.
+
+:::info
+4.3.0 version changed the content and location of the `docker-compose.yaml` file, if you updated from a previous version, please [redploy according to the documentation](/en/deploy/langbot/docker).
+:::
 
 ## Manual Deployment
 
