@@ -30,6 +30,11 @@ export default defineConfig({
     },
   },
 
+  sitemap: {
+    hostname: 'https://docs.langbot.app',
+    
+  },
+
   locales: {
     root: {
       title: "LangBot 文档",
