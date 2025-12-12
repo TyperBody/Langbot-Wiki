@@ -2,6 +2,7 @@ import { defineConfig } from "vitepress";
 import { useSidebar } from "vitepress-openapi";
 import specZh from '../assets/service-api-openapi-zh.json' with { type: 'json' }
 import specEn from '../assets/service-api-openapi-en.json' with { type: 'json' }
+import specJa from '../assets/service-api-openapi-ja.json' with { type: 'json' }
 
 const sidebarZh = useSidebar({
   spec: specZh,
@@ -11,6 +12,11 @@ const sidebarZh = useSidebar({
 const sidebarEn = useSidebar({
   spec: specEn,
   linkPrefix: '/en/tags/',
+})
+
+const sidebarJa = useSidebar({
+  spec: specJa,
+  linkPrefix: '/ja/tags/',
 })
 
 // https://vitepress.dev/reference/site-config
@@ -575,6 +581,262 @@ export default defineConfig({
               { text: "Development Configuration", link: "/en/develop/dev-config" },
               { text: "Component Architecture", link: "/en/develop/comp-arch" },
               { text: "Plugin Runtime", link: "/en/develop/plugin-runtime" },
+            ],
+          },
+        ],
+
+        // edit link
+        editLink: {
+          pattern:
+            "https://github.com/langbot-app/Langbot-Wiki/edit/main/docs/:path",
+        },
+
+        // social links in the navbar
+        socialLinks: [
+          {
+            icon: "github",
+            link: "https://github.com/langbot-app/LangBot",
+          },
+        ],
+      },
+    },
+    ja: {
+      title: "LangBot ドキュメント",
+      label: "日本語",
+      lang: "ja",
+      link: "/ja/",
+      themeConfig: {
+        nav: [
+          { text: "ホーム", link: "https://langbot.app" },
+          { text: "マーケット", link: "https://space.langbot.app" },
+          { text: "ロードマップ", link: "https://langbot.featurebase.app/roadmap" },
+        ],
+
+        sidebar: [
+          {
+            text: "概要",
+            items: [
+              { text: "はじめに（必読）", link: "/ja/insight/guide" },
+              { text: "コミュニティリソース", link: "/ja/insight/community" },
+              { text: "機能一覧", link: "/ja/insight/features" },
+            ],
+          },
+          {
+            text: "デプロイと使用方法",
+            items: [
+              {
+                text: "LangBot をデプロイ",
+                collapsed: true,
+                items: [
+                  { text: "パッケージマネージャーでデプロイ", link: "/ja/deploy/langbot/package" },
+                  { text: "Docker でデプロイ", link: "/ja/deploy/langbot/docker" },
+                  {
+                    text: "1Panel でデプロイ",
+                    link: "/ja/deploy/langbot/one-click/1panel",
+                  },
+                  {
+                    text: "aaPanel でデプロイ",
+                    link: "/ja/deploy/langbot/one-click/bt",
+                  },
+                  { text: "手動デプロイ", link: "/ja/deploy/langbot/manual" },
+                ],
+              },
+              {
+                text: "ボットを設定",
+                collapsed: true,
+                link: "/ja/deploy/platforms/readme",
+                items: [
+                  { text: "Discord", link: "/ja/deploy/platforms/discord" },
+                  { text: "Telegram", link: "/ja/deploy/platforms/telegram" },
+                  { text: "Slack", link: "/ja/deploy/platforms/slack" },
+                  { text: "LINE", link: "/ja/deploy/platforms/line" },
+                  { text: "KOOK", link: "/ja/deploy/platforms/kook" },
+                  { text: "Lark", link: "/ja/deploy/platforms/lark" },
+                  { text: "DingTalk", link: "/ja/deploy/platforms/dingtalk" },
+                  {
+                    text: "OneBot v11",
+                    collapsed: true,
+                    items: [
+                      {
+                        text: "NapCat",
+                        link: "/ja/deploy/platforms/qq/aiocqhttp/napcat",
+                      },
+                      {
+                        text: "Lagrange",
+                        link: "/ja/deploy/platforms/qq/aiocqhttp/lagrange",
+                      },
+                      {
+                        text: "llonebot",
+                        link: "/ja/deploy/platforms/qq/aiocqhttp/llonebot",
+                      },
+                    ],
+                  },
+                  {
+                    text: "QQ 公式ボット",
+                    collapsed: true,
+                    items: [
+                      {
+                        text: "Webhook 方式",
+                        link: "/ja/deploy/platforms/qq/official_webhook",
+                      },
+                      {
+                        text: "WebSocket 方式",
+                        link: "/ja/deploy/platforms/qq/official",
+                      },
+                    ],
+                  },
+                  {
+                    text: "WeCom（企業微信）",
+                    collapsed: true,
+                    items: [
+                      {
+                        text: "内部アプリケーション",
+                        link: "/ja/deploy/platforms/wecom/wecom",
+                      },
+                      {
+                        text: "外部カスタマーサービス",
+                        link: "/ja/deploy/platforms/wecom/wecomcs",
+                      },
+                      {
+                        text: "インテリジェントボット",
+                        link: "/ja/deploy/platforms/wecom/wecombot",
+                      }
+                    ],
+                  },
+                  { text: "WeChat 公式アカウント", link: "/ja/deploy/platforms/wxoa" },
+                ],
+              },
+              {
+                text: "モデルを設定",
+                link: "/ja/deploy/models/readme",
+              },
+              {
+                text: "対話パイプラインを変更",
+                link: "/ja/deploy/pipelines/readme",
+                collapsed: true,
+                items: [
+                  { text: "Dify", link: "/ja/deploy/pipelines/dify" },
+                  { text: "n8n", link: "/ja/deploy/pipelines/n8n" },
+                  { text: "Langflow", link: "/ja/deploy/pipelines/langflow" },
+                ],
+              },
+              {
+                text: "ナレッジベースを使用",
+                link: "/ja/deploy/knowledge/readme",
+              },
+              {
+                text: "MCP サービスを使用",
+                link: "/ja/deploy/mcp/readme",
+              },
+              {
+                text: "システム設定",
+                link: "/ja/deploy/settings",
+              },
+              {
+                text: "対話コマンド",
+                link: "/ja/deploy/command",
+              },
+              {
+                text: "LangBot を更新",
+                link: "/ja/deploy/update",
+              },
+            ],
+          },
+          {
+            text: "プラグイン",
+            items: [
+              { text: "プラグイン紹介", link: "/ja/plugin/plugin-intro" },
+              {
+                text: "プラグイン開発",
+                collapsed: true,
+                items: [
+                  { text: "基本チュートリアル", link: "/ja/plugin/dev/tutor" },
+                  { text: "プラグイン設定情報を完成", link: "/ja/plugin/dev/basic-info" },
+                  { text: "ディレクトリ構造", link: "/ja/plugin/dev/directory-structure" },
+                  {
+                    text: "コンポーネント開発",
+                    collapsed: true,
+                    items: [
+                      { text: "コンポーネントを追加", link: "/ja/plugin/dev/components/add" },
+                      { text: "コンポーネント：イベントリスナー", link: "/ja/plugin/dev/components/event-listener" },
+                      { text: "コンポーネント：コマンド", link: "/ja/plugin/dev/components/command" },
+                      { text: "コンポーネント：ツール", link: "/ja/plugin/dev/components/tool" },
+                      { text: "コンポーネント：ナレッジレトリーバー", link: "/ja/plugin/dev/components/knowledge-retriever" },
+                    ],
+                  },
+                  {
+                    text: "API リファレンス",
+                    collapsed: true,
+                    items: [
+                      { text: "プラグイン共通 API", link: "/ja/plugin/dev/apis/common" },
+                      { text: "パイプラインイベント", link: "/ja/plugin/dev/apis/pipeline-events" },
+                      { text: "メッセージプラットフォームエンティティ", link: "/ja/plugin/dev/apis/messages" },
+                    ],
+                  },
+                  { text: "移行ガイド", link: "/ja/plugin/dev/migration" },
+                  {
+                    text: "プラグインを配布", collapsed: true,
+                    items: [
+                      { text: "マーケットプレイスに公開", link: "/ja/plugin/dev/publish/market" },
+                      { text: "GitHub で配布", link: "/ja/plugin/dev/publish/github" },
+                    ]
+                  },
+                ],
+              },
+              { text: "システム互換性", link: "/ja/plugin/compatibility" },
+            ],
+          },
+          {
+            text: "ワークショップ",
+            items: [
+              {
+                text: "本番環境で LangBot を使用",
+                collapsed: true,
+                items: [
+                  { text: "HTTP リバースプロキシの設定またはゲートウェイ経由で LangBot にアクセス", link: "/ja/workshop/production/proxy-and-ssl" },
+                ],
+              },
+              {
+                text: "メッセージプラットフォームアダプターの実装方法",
+                link: "/ja/workshop/impl-platform-adapter",
+              },
+              {
+                text: "コンテナネットワーク設定の詳細",
+                link: "/ja/workshop/network-details",
+              },
+              {
+                text: "New API を使用して複数チャネルのモデルを中継",
+                link: "/ja/workshop/newapi-integration"
+              },
+              {
+                text: "PPIO API モデルの統合",
+                link: "/ja/workshop/ppio-integration"
+              },
+              {
+                text: "302.AI モデルの統合",
+                link: "/ja/workshop/302ai-integration"
+              }
+            ],
+          },
+          {
+            text: "[Beta] Service API リファレンス",
+            items: [
+              { text: "概要", link: "/ja/tags/readme" },
+              { text: "Webhooks", link: "/ja/tags/webhook" },
+              ...sidebarJa.generateSidebarGroups({
+                linkPrefix: '/ja/tags/',
+              }).map(group => ({
+                ...group,
+                collapsed: true,
+              })),
+            ],
+          },
+          {
+            text: "開発",
+            items: [
+              { text: "開発設定", link: "/ja/develop/dev-config" },
+              { text: "コンポーネントアーキテクチャ", link: "/ja/develop/comp-arch" },
+              { text: "プラグインランタイム", link: "/ja/develop/plugin-runtime" },
             ],
           },
         ],

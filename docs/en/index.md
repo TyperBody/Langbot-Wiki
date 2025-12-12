@@ -1,3 +1,3 @@
 <script setup>
-  window.location.href = '/zh/insight/guide'
+  window.location.href = '/en/insight/guide'
 </script>
