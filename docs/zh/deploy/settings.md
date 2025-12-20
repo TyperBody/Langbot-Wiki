@@ -110,6 +110,7 @@ vdb:
     # - qdrant（外部向量数据库，请在下方配置）
     # - milvus（可扩展的向量数据库，请在下方配置）
     # - pgvector（PostgreSQL 扩展，请在下方配置）
+    # - seekdb（提供内置嵌入模型的数据库，请在下方配置）
     use: chroma
     # Qdrant 配置
     qdrant:
@@ -126,6 +127,19 @@ vdb:
         database: 'langbot'
         user: 'postgres'
         password: 'postgres'
+    seekdb:
+        # 嵌入式模式（'embedded' 或 'server'）
+        mode: embedded  
+        # 嵌入式模式配置：
+        path: './data/seekdb'          
+        database: 'langbot'            
+        # 服务器模式配置（当 mode='server' 时生效）：
+        host: 'localhost'              
+        port: 2881                     
+        user: 'root'                   
+        password: ''                   
+        # 可选，用于 OceanBase 多租户场景
+        tenant: ''                     
 ```
 
 ## 通过环境变量设置
