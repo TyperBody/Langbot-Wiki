@@ -103,6 +103,10 @@ system:
         expire: 604800
         # JWT secret key, a key will be automatically generated on first startup
         secret: 'xxxx'
+    # Whether to allow changing the password
+    allow_change_password: true
+    # Recovery key
+    recovery_key: 'xxxx'
 
 # Vector database configuration
 vdb:

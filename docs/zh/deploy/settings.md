@@ -101,6 +101,10 @@ system:
         expire: 604800
         # JWT 密钥，首次启动时会自动生成一个密钥
         secret: 'xxxx'
+    # 是否允许修改密码
+    allow_change_password: true
+    # 恢复密钥
+    recovery_key: 'xxxx'
 
 # 向量数据库配置
 vdb:
