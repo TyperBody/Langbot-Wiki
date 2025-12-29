@@ -230,6 +230,7 @@ export default defineConfig({
                       { text: "消息平台实体", link: "/zh/plugin/dev/apis/messages" },
                     ],
                   },
+                  { text: "代码规范", link: "/zh/plugin/dev/style" },
                   { text: "迁移指南", link: "/zh/plugin/dev/migration" },
                   {
                     text: "分发插件", collapsed: true,
@@ -513,6 +514,7 @@ export default defineConfig({
                       { text: "Message Platform Entities", link: "/en/plugin/dev/apis/messages" },
                     ],
                   },
+                  { text: "Code Style", link: "/en/plugin/dev/style" },
                   { text: "Migration Guide", link: "/en/plugin/dev/migration" },
                   {
                     text: "Distribute Plugin", collapsed: true,
@@ -773,6 +775,7 @@ export default defineConfig({
                       { text: "メッセージプラットフォームエンティティ", link: "/ja/plugin/dev/apis/messages" },
                     ],
                   },
+                  { text: "コードスタイル", link: "/ja/plugin/dev/style" },
                   { text: "移行ガイド", link: "/ja/plugin/dev/migration" },
                   {
                     text: "プラグインを配布", collapsed: true,
