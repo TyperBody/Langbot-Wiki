@@ -1,6 +1,18 @@
 # モデルの設定(Models)
 
-## 対話モデル (LLM Model)
+## LangBot Models
+
+LangBot Modelsは、LangBotが公式に提供するモデルサービスです。LangBot Spaceアカウントでローカルインスタンスを初期化すると、利用可能なモデルが自動的にインスタンスに追加され、設定は不要です。すぐに始められるように、一定の無料枠が提供されます。
+
+<img src="/assets/image/zh/deploy/models/langbot_models.png" alt="langbot_models" />
+
+具体的な利用可能モデルについては、[LangBot Space](https://space.langbot.app/models)をご確認ください。
+
+## カスタムモデル
+
+他のソースからモデルを追加することもできます。
+
+### 対話モデル (LLM Model)
 
 モデルはパイプラインによってメッセージ処理に使用されます。最初に設定したモデルがデフォルトパイプラインのモデルとして設定されます。
 
@@ -18,21 +30,7 @@
 
 - Function Calling: 会話でAgentツールを使用するために有効にする必要があります
 
-:::info
-
-*APIキーをお持ちでない場合は、[このリレーステーションから入手できます](https://api.qhaigc.net/)*
-
-サードパーティのAPIリレーや他のモデルプロバイダーを使用する必要がある場合、
-
-`OpenAI`を選択してください
-
-リクエストURLにリレーのBase URLを入力します。例:
-
-<img width="400px" src="/assets/image/zh/deploy/models/other_provider.png" alt="other_provider" />
-
-:::
-
-## 埋め込みモデル (Embedding Model)
+### 埋め込みモデル (Embedding Model)
 
 埋め込みモデルはメッセージのベクトル表現を計算するために使用されます。ナレッジベースを使用する場合は、このモデルを設定してください。
 

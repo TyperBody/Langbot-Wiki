@@ -1,6 +1,18 @@
 # 配置模型 (Models)
 
-## 对话模型 (LLM Model)
+## LangBot Models
+
+LangBot Models 是 LangBot 官方提供的模型服务。当您使用 LangBot Space 账户初始化本地实例时，可用模型将被自动添加到您的实例中，无需进行任何配置。您将会获得一定的免费额度用于快速上手。
+
+<img src="/assets/image/zh/deploy/models/langbot_models.png" alt="langbot_models" />
+
+具体可用模型，请查看[LangBot Space](https://space.langbot.app/models)。
+
+## 自定义模型
+
+您也可以添加其他来源的模型。
+
+### 对话模型 (LLM Model)
 
 对话模型将被流水线用于处理消息，您配置的第一个模型将被设置为默认流水线的模型。
 
@@ -18,21 +30,7 @@
 
 - 函数调用：需要启用才可以在对话中使用 Agent 工具
 
-:::info
-
-*如果你没有API Key，你可以[在此中转站获取](https://api.qhaigc.net/)*
-
-如果需要使用第三方中转 API 等模型提供商
-
-选择 `OpenAI`即可
-
-请求 URL 填入中转的 Base URL 即可，例如
-
-<img width="400px" src="/assets/image/zh/deploy/models/other_provider.png" alt="other_provider" />
-
-:::
-
-## 嵌入模型 (Embedding Model)
+### 嵌入模型 (Embedding Model)
 
 嵌入模型将被用于计算消息的向量，若您需要使用知识库，请配置此模型。
 

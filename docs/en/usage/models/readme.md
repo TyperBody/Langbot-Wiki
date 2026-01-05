@@ -1,6 +1,18 @@
 # Configure Models (Models)
 
-## LLM Model
+## LangBot Models
+
+LangBot Models is an official model service provided by LangBot. When you initialize a local instance with your LangBot Space account, available models will be automatically added to your instance without any configuration. You will receive a certain amount of free quota to get started quickly.
+
+<img src="/assets/image/zh/deploy/models/langbot_models.png" alt="langbot_models" />
+
+For specific available models, please check [LangBot Space](https://space.langbot.app/models).
+
+## Custom Models
+
+You can also add models from other sources.
+
+### LLM Model
 
 Models will be used by pipelines to process messages. The first model you configure will be set as the model for the default pipeline.
 
@@ -18,21 +30,7 @@ For model capabilities, please choose according to the specific model characteri
 
 - Function Calling: Needs to be enabled to use Agent tools in conversations
 
-:::info
-
-*If you don't have an API Key, you can [get one from this relay station](https://api.qhaigc.net/)*
-
-If you need to use third-party API relays or other model providers,
-
-Select `OpenAI`
-
-Fill in the relay's Base URL for the Request URL, for example:
-
-<img width="400px" src="/assets/image/zh/deploy/models/other_provider.png" alt="other_provider" />
-
-:::
-
-## Embedding Model
+### Embedding Model
 
 Embedding models are used to compute vector representations of messages. If you need to use knowledge bases, please configure this model.
 
