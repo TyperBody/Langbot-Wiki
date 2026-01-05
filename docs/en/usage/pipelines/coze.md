@@ -46,4 +46,4 @@ Once completed, you can invoke the Coze agent within this pipeline for dialogue 
 - **Save fails or invocation returns an error**: Please verify that the token and bot_id are correct and do not contain extra spaces
 - **Unable to select `Coze API`**: Please confirm whether the current version supports this runner. If not yet supported, please upgrade to a version that includes the Coze runner
 
-For more general pipeline configuration instructions, please refer to [Modifying Dialogue Pipeline Configuration](/en/deploy/pipelines/readme)
+For more general pipeline configuration instructions, please refer to [Modifying Dialogue Pipeline Configuration](/en/usage/pipelines/readme)

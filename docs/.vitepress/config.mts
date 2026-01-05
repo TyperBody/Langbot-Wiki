@@ -69,7 +69,7 @@ export default defineConfig({
             ],
           },
           {
-            text: "部署和使用",
+            text: "部署",
             items: [
               {
                 text: "部署 LangBot",
@@ -89,9 +89,22 @@ export default defineConfig({
                 ],
               },
               {
+                text: "系统环境设置",
+                link: "/zh/deploy/settings",
+              },
+              {
+                text: "更新 LangBot",
+                link: "/zh/deploy/update",
+              },
+            ],
+          },
+          {
+            text: "构建机器人",
+            items: [
+              {
                 text: "配置机器人",
                 collapsed: true,
-                link: "/zh/deploy/platforms/readme",
+                link: "/zh/usage/platforms/readme",
                 items: [
                   {
                     text: "OneBot v11",
@@ -99,30 +112,29 @@ export default defineConfig({
                     items: [
                       {
                         text: "NapCat",
-                        link: "/zh/deploy/platforms/qq/aiocqhttp/napcat",
+                        link: "/zh/usage/platforms/qq/aiocqhttp/napcat",
                       },
                       {
                         text: "Lagrange",
-                        link: "/zh/deploy/platforms/qq/aiocqhttp/lagrange",
+                        link: "/zh/usage/platforms/qq/aiocqhttp/lagrange",
                       },
                       {
                         text: "llonebot",
-                        link: "/zh/deploy/platforms/qq/aiocqhttp/llonebot",
+                        link: "/zh/usage/platforms/qq/aiocqhttp/llonebot",
                       },
                     ],
                   },
                   {
                     text: "QQ 官方机器人",
-                    // link: "/deploy/platforms/qq/official",
                     collapsed: true,
                     items: [
                       {
                         text: "Webhook 方式",
-                        link: "/zh/deploy/platforms/qq/official_webhook",
+                        link: "/zh/usage/platforms/qq/official_webhook",
                       },
                       {
                         text: "WebSocket 方式",
-                        link: "/zh/deploy/platforms/qq/official",
+                        link: "/zh/usage/platforms/qq/official",
                       },
                     ],
                   },
@@ -132,15 +144,15 @@ export default defineConfig({
                     items: [
                       {
                         text: "内部应用",
-                        link: "/zh/deploy/platforms/wecom/wecom",
+                        link: "/zh/usage/platforms/wecom/wecom",
                       },
                       {
                         text: "对外客服",
-                        link: "/zh/deploy/platforms/wecom/wecomcs",
+                        link: "/zh/usage/platforms/wecom/wecomcs",
                       },
                       {
                         text: "智能机器人",
-                        link: "/zh/deploy/platforms/wecom/wecombot",
+                        link: "/zh/usage/platforms/wecom/wecombot",
                       }
                     ],
                   },
@@ -150,55 +162,47 @@ export default defineConfig({
                     items: [
                       {
                         text: "WeChatPadPro",
-                        link: "/zh/deploy/platforms/wechat/wechatpad.md"
+                        link: "/zh/usage/platforms/wechat/wechatpad.md"
                       },
                     ],
                   },
-                  { text: "微信公众号", link: "/zh/deploy/platforms/wxoa.md" },
-                  { text: "飞书", link: "/zh/deploy/platforms/lark" },
-                  { text: "钉钉", link: "/zh/deploy/platforms/dingtalk.md" },
-                  { text: "Discord", link: "/zh/deploy/platforms/discord" },
-                  { text: "Telegram", link: "/zh/deploy/platforms/telegram" },
-                  { text: "Slack", link: "/zh/deploy/platforms/slack" },
-                  { text: "LINE", link: "/zh/deploy/platforms/line" },
-                  { text: "KOOK", link: "/zh/deploy/platforms/kook" },
+                  { text: "微信公众号", link: "/zh/usage/platforms/wxoa.md" },
+                  { text: "飞书", link: "/zh/usage/platforms/lark" },
+                  { text: "钉钉", link: "/zh/usage/platforms/dingtalk.md" },
+                  { text: "Discord", link: "/zh/usage/platforms/discord" },
+                  { text: "Telegram", link: "/zh/usage/platforms/telegram" },
+                  { text: "Slack", link: "/zh/usage/platforms/slack" },
+                  { text: "LINE", link: "/zh/usage/platforms/line" },
+                  { text: "KOOK", link: "/zh/usage/platforms/kook" },
                 ],
               },
               {
                 text: "配置模型",
-                link: "/zh/deploy/models/readme",
+                link: "/zh/usage/models/readme",
               },
               {
                 text: "修改对话流水线",
-                link: "/zh/deploy/pipelines/readme",
+                link: "/zh/usage/pipelines/readme",
                 collapsed: true,
                 items: [
-                  { text: "Dify", link: "/zh/deploy/pipelines/dify" },
-                  { text: "n8n", link: "/zh/deploy/pipelines/n8n" },
-                  { text: "Langflow", link: "/zh/deploy/pipelines/langflow" },
-                  { text: "TBox", link: "/zh/deploy/pipelines/tbox" },
-                  { text: "Coze", link: "/zh/deploy/pipelines/coze" },
+                  { text: "Dify", link: "/zh/usage/pipelines/dify" },
+                  { text: "n8n", link: "/zh/usage/pipelines/n8n" },
+                  { text: "Langflow", link: "/zh/usage/pipelines/langflow" },
+                  { text: "TBox", link: "/zh/usage/pipelines/tbox" },
+                  { text: "Coze", link: "/zh/usage/pipelines/coze" },
                 ],
               },
               {
                 text: "使用知识库",
-                link: "/zh/deploy/knowledge/readme",
+                link: "/zh/usage/knowledge/readme",
               },
               {
                 text: "使用 MCP 服务",
-                link: "zh/deploy/mcp/readme"
-              },
-              {
-                text: "系统环境设置",
-                link: "/zh/deploy/settings",
+                link: "/zh/usage/mcp/readme"
               },
               {
                 text: "对话命令",
                 link: "/zh/deploy/command",
-              },
-              {
-                text: "更新 LangBot",
-                link: "/zh/deploy/update",
               },
             ],
           },
@@ -367,7 +371,7 @@ export default defineConfig({
             ],
           },
           {
-            text: "Deployment and Usage",
+            text: "Deployment",
             items: [
               {
                 text: "Deploy LangBot",
@@ -387,32 +391,45 @@ export default defineConfig({
                 ],
               },
               {
+                text: "System Settings",
+                link: "/en/deploy/settings",
+              },
+              {
+                text: "Update LangBot",
+                link: "/en/deploy/update",
+              },
+            ],
+          },
+          {
+            text: "Build Your Bot",
+            items: [
+              {
                 text: "Configure Bots",
                 collapsed: true,
-                link: "/en/deploy/platforms/readme",
+                link: "/en/usage/platforms/readme",
                 items: [
-                  { text: "Discord", link: "/en/deploy/platforms/discord" },
-                  { text: "Telegram", link: "/en/deploy/platforms/telegram" },
-                  { text: "Slack", link: "/en/deploy/platforms/slack" },
-                  { text: "LINE", link: "/en/deploy/platforms/line" },
-                  { text: "KOOK", link: "/en/deploy/platforms/kook" },
-                  { text: "Lark", link: "/en/deploy/platforms/lark" },
-                  { text: "DingTalk", link: "/en/deploy/platforms/dingtalk" },
+                  { text: "Discord", link: "/en/usage/platforms/discord" },
+                  { text: "Telegram", link: "/en/usage/platforms/telegram" },
+                  { text: "Slack", link: "/en/usage/platforms/slack" },
+                  { text: "LINE", link: "/en/usage/platforms/line" },
+                  { text: "KOOK", link: "/en/usage/platforms/kook" },
+                  { text: "Lark", link: "/en/usage/platforms/lark" },
+                  { text: "DingTalk", link: "/en/usage/platforms/dingtalk" },
                   {
                     text: "OneBot v11",
                     collapsed: true,
                     items: [
                       {
                         text: "NapCat",
-                        link: "/en/deploy/platforms/qq/aiocqhttp/napcat",
+                        link: "/en/usage/platforms/qq/aiocqhttp/napcat",
                       },
                       {
                         text: "Lagrange",
-                        link: "/en/deploy/platforms/qq/aiocqhttp/lagrange",
+                        link: "/en/usage/platforms/qq/aiocqhttp/lagrange",
                       },
                       {
                         text: "llonebot",
-                        link: "/en/deploy/platforms/qq/aiocqhttp/llonebot",
+                        link: "/en/usage/platforms/qq/aiocqhttp/llonebot",
                       },
                     ],
                   },
@@ -422,11 +439,11 @@ export default defineConfig({
                     items: [
                       {
                         text: "Webhook Method",
-                        link: "/en/deploy/platforms/qq/official_webhook",
+                        link: "/en/usage/platforms/qq/official_webhook",
                       },
                       {
                         text: "WebSocket Method",
-                        link: "/en/deploy/platforms/qq/official",
+                        link: "/en/usage/platforms/qq/official",
                       },
                     ],
                   },
@@ -436,54 +453,46 @@ export default defineConfig({
                     items: [
                       {
                         text: "Internal Application",
-                        link: "/en/deploy/platforms/wecom/wecom",
+                        link: "/en/usage/platforms/wecom/wecom",
                       },
                       {
                         text: "External Customer Service",
-                        link: "/en/deploy/platforms/wecom/wecomcs",
+                        link: "/en/usage/platforms/wecom/wecomcs",
                       },
                       {
                         text: "Intelligent Bot",
-                        link: "/en/deploy/platforms/wecom/wecombot",
+                        link: "/en/usage/platforms/wecom/wecombot",
                       }
                     ],
                   },
-                  { text: "WeChat Official Account", link: "/en/deploy/platforms/wxoa" },
+                  { text: "WeChat Official Account", link: "/en/usage/platforms/wxoa" },
                 ],
               },
               {
                 text: "Configure Models",
-                link: "/en/deploy/models/readme",
+                link: "/en/usage/models/readme",
               },
               {
                 text: "Modify Dialogue Pipeline",
-                link: "/en/deploy/pipelines/readme",
+                link: "/en/usage/pipelines/readme",
                 collapsed: true,
                 items: [
-                  { text: "Dify", link: "/en/deploy/pipelines/dify" },
-                  { text: "n8n", link: "/en/deploy/pipelines/n8n" },
-                  { text: "Langflow", link: "/en/deploy/pipelines/langflow" },
+                  { text: "Dify", link: "/en/usage/pipelines/dify" },
+                  { text: "n8n", link: "/en/usage/pipelines/n8n" },
+                  { text: "Langflow", link: "/en/usage/pipelines/langflow" },
                 ],
               },
               {
                 text: "Using Knowledge Base",
-                link: "/en/deploy/knowledge/readme",
+                link: "/en/usage/knowledge/readme",
               },
               {
                 text: "Using MCP Services",
-                link: "/en/deploy/mcp/readme",
-              },
-              {
-                text: "System Settings",
-                link: "/en/deploy/settings",
+                link: "/en/usage/mcp/readme",
               },
               {
                 text: "Dialogue Commands",
                 link: "/en/deploy/command",
-              },
-              {
-                text: "Update LangBot",
-                link: "/en/deploy/update",
               },
             ],
           },
@@ -628,7 +637,7 @@ export default defineConfig({
             ],
           },
           {
-            text: "デプロイと使用方法",
+            text: "デプロイ",
             items: [
               {
                 text: "LangBot をデプロイ",
@@ -648,32 +657,45 @@ export default defineConfig({
                 ],
               },
               {
+                text: "システム設定",
+                link: "/ja/deploy/settings",
+              },
+              {
+                text: "LangBot を更新",
+                link: "/ja/deploy/update",
+              },
+            ],
+          },
+          {
+            text: "ボットを構築",
+            items: [
+              {
                 text: "ボットを設定",
                 collapsed: true,
-                link: "/ja/deploy/platforms/readme",
+                link: "/ja/usage/platforms/readme",
                 items: [
-                  { text: "Discord", link: "/ja/deploy/platforms/discord" },
-                  { text: "Telegram", link: "/ja/deploy/platforms/telegram" },
-                  { text: "Slack", link: "/ja/deploy/platforms/slack" },
-                  { text: "LINE", link: "/ja/deploy/platforms/line" },
-                  { text: "KOOK", link: "/ja/deploy/platforms/kook" },
-                  { text: "Lark", link: "/ja/deploy/platforms/lark" },
-                  { text: "DingTalk", link: "/ja/deploy/platforms/dingtalk" },
+                  { text: "Discord", link: "/ja/usage/platforms/discord" },
+                  { text: "Telegram", link: "/ja/usage/platforms/telegram" },
+                  { text: "Slack", link: "/ja/usage/platforms/slack" },
+                  { text: "LINE", link: "/ja/usage/platforms/line" },
+                  { text: "KOOK", link: "/ja/usage/platforms/kook" },
+                  { text: "Lark", link: "/ja/usage/platforms/lark" },
+                  { text: "DingTalk", link: "/ja/usage/platforms/dingtalk" },
                   {
                     text: "OneBot v11",
                     collapsed: true,
                     items: [
                       {
                         text: "NapCat",
-                        link: "/ja/deploy/platforms/qq/aiocqhttp/napcat",
+                        link: "/ja/usage/platforms/qq/aiocqhttp/napcat",
                       },
                       {
                         text: "Lagrange",
-                        link: "/ja/deploy/platforms/qq/aiocqhttp/lagrange",
+                        link: "/ja/usage/platforms/qq/aiocqhttp/lagrange",
                       },
                       {
                         text: "llonebot",
-                        link: "/ja/deploy/platforms/qq/aiocqhttp/llonebot",
+                        link: "/ja/usage/platforms/qq/aiocqhttp/llonebot",
                       },
                     ],
                   },
@@ -683,11 +705,11 @@ export default defineConfig({
                     items: [
                       {
                         text: "Webhook 方式",
-                        link: "/ja/deploy/platforms/qq/official_webhook",
+                        link: "/ja/usage/platforms/qq/official_webhook",
                       },
                       {
                         text: "WebSocket 方式",
-                        link: "/ja/deploy/platforms/qq/official",
+                        link: "/ja/usage/platforms/qq/official",
                       },
                     ],
                   },
@@ -697,54 +719,46 @@ export default defineConfig({
                     items: [
                       {
                         text: "内部アプリケーション",
-                        link: "/ja/deploy/platforms/wecom/wecom",
+                        link: "/ja/usage/platforms/wecom/wecom",
                       },
                       {
                         text: "外部カスタマーサービス",
-                        link: "/ja/deploy/platforms/wecom/wecomcs",
+                        link: "/ja/usage/platforms/wecom/wecomcs",
                       },
                       {
                         text: "インテリジェントボット",
-                        link: "/ja/deploy/platforms/wecom/wecombot",
+                        link: "/ja/usage/platforms/wecom/wecombot",
                       }
                     ],
                   },
-                  { text: "WeChat 公式アカウント", link: "/ja/deploy/platforms/wxoa" },
+                  { text: "WeChat 公式アカウント", link: "/ja/usage/platforms/wxoa" },
                 ],
               },
               {
                 text: "モデルを設定",
-                link: "/ja/deploy/models/readme",
+                link: "/ja/usage/models/readme",
               },
               {
                 text: "対話パイプラインを変更",
-                link: "/ja/deploy/pipelines/readme",
+                link: "/ja/usage/pipelines/readme",
                 collapsed: true,
                 items: [
-                  { text: "Dify", link: "/ja/deploy/pipelines/dify" },
-                  { text: "n8n", link: "/ja/deploy/pipelines/n8n" },
-                  { text: "Langflow", link: "/ja/deploy/pipelines/langflow" },
+                  { text: "Dify", link: "/ja/usage/pipelines/dify" },
+                  { text: "n8n", link: "/ja/usage/pipelines/n8n" },
+                  { text: "Langflow", link: "/ja/usage/pipelines/langflow" },
                 ],
               },
               {
                 text: "ナレッジベースを使用",
-                link: "/ja/deploy/knowledge/readme",
+                link: "/ja/usage/knowledge/readme",
               },
               {
                 text: "MCP サービスを使用",
-                link: "/ja/deploy/mcp/readme",
-              },
-              {
-                text: "システム設定",
-                link: "/ja/deploy/settings",
+                link: "/ja/usage/mcp/readme",
               },
               {
                 text: "対話コマンド",
                 link: "/ja/deploy/command",
-              },
-              {
-                text: "LangBot を更新",
-                link: "/ja/deploy/update",
               },
             ],
           },
