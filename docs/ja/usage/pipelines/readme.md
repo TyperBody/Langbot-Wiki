@@ -28,8 +28,8 @@ AI機能は主に2つの部分に分かれています: ランナーの選択と
 
 <img width="400px" src="/assets/image/zh/deploy/pipelines/more_runner.png" alt="more_runner" />
 
-- Difyへの接続の詳細手順は、[チュートリアルを参照](/en/deploy/pipelines/dify.html)してください。
-- n8nへの接続の詳細手順は、[チュートリアルを参照](/en/deploy/pipelines/n8n.html)してください。
+- Difyへの接続の詳細手順は、[チュートリアルを参照](/ja/usage/pipelines/dify.html)してください。
+- n8nへの接続の詳細手順は、[チュートリアルを参照](/ja/usage/pipelines/n8n.html)してください。
 
 ### 会話変数
 外部LLMOpsプラットフォームを使用する場合、LangBotは以下のパラメータを明示的に渡します。これらをLLMOpsプラットフォームワークフローの開始ノードに追加できます(以下の画像はDifyの例です):
