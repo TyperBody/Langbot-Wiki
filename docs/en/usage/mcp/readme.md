@@ -1,10 +1,10 @@
 # Using MCP Servers
 
 
-LangBot supports SSE mode MCP servers. You can add MCP servers to leverage the tool calling capabilities in large language models for better handling of LLM requests.
+LangBot supports using tools from MCP servers. You can add MCP servers to leverage the tool calling capabilities in large language models for better handling of LLM requests.
 
 :::info
-MCP service only supports SSE mode.
+- MCP service supports HTTP Streamable, SSE and stdio modes.
 - MCP servers recommended acquisition channel: [Composio MCP](https://mcp.composio.dev/)
 :::
 

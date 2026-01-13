@@ -1,10 +1,10 @@
 # MCPサーバーの使用
 
 
-LangBotはSSEモードのMCPサーバーをサポートしています。MCPサーバーを追加して、大規模言語モデルのツール呼び出し機能を活用し、LLMリクエストをより適切に処理できます。
+LangBotはMCPサーバーをサポートしています。MCPサーバーを追加して、大規模言語モデルのツール呼び出し機能を活用し、LLMリクエストをより適切に処理できます。
 
 :::info
-MCPサービスはSSEモードのみをサポートしています。
+- MCP サービスは HTTP Streamable、SSE および stdio モードをサポートしています。
 - MCPサーバーの推奨取得チャネル: [Composio MCP](https://mcp.composio.dev/)
 :::
 
