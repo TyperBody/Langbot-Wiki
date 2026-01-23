@@ -58,6 +58,14 @@ npm run dev
 生产环境中，前端会被预编译成静态文件，由后端提供服务，前端会自动访问同域的后端地址。
 :::
 
+## 代码格式化
+
+仓库中包含 lint 和 format 检查工作流，您推送代码后将被自动检查。请配置 pre-commit 来在提交时在本地提前检查代码。
+
+```bash
+uv run pre-commit install
+```
+
 ## API 文档
 
 我们在开发每个接口之前都会先在 APIFox 中编写接口文档，请查看 [API 文档](https://ok52vhsenr.apifox.cn/)。

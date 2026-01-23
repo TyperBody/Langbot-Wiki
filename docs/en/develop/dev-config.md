@@ -58,6 +58,14 @@ When using `pnpm dev` to start locally, the environment variable `NEXT_PUBLIC_AP
 In production environments, the frontend will be precompiled into static files and provided by the backend, and the frontend will automatically access the backend address on the same domain.
 :::
 
+## Code Formatting
+
+The repository contains lint and format check workflows, and your code will be automatically checked when you push it. Please configure pre-commit to check your code locally before submitting.
+
+```bash
+uv run pre-commit install
+```
+
 ## API Documentation
 
 We will write API documentation in APIFox before developing each interface. Please refer to [API Documentation(Chinese)](https://ok52vhsenr.apifox.cn/).
