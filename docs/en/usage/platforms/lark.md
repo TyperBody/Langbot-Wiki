@@ -19,6 +19,10 @@ If card streaming permissions are required, additionally add the following card 
 
 ![img_1.png](../../../assets/image/zh/deploy/bots/lark/lark_14.png)
 
+::: warning
+If you need to change the default card template, you need to modify the card template in the platform adapter's code yourself.
+:::
+
 ## Connect to LangBot
 
 Find `app_id` and `app_secret` on the `Credentials and Basic Information` page.

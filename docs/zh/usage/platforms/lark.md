@@ -19,6 +19,10 @@
 
 ![img_1.png](../../../assets/image/zh/deploy/bots/lark/lark_14.png)
 
+::: warning
+默认卡片模板如需更换，需要自己去平台适配器的代码中修改卡片模板
+:::
+
 ## 对接 LangBot
 
 在`凭证与基础信息`页找到`app_id`和`app_secret`。
