@@ -52,6 +52,7 @@ export default defineConfig({
         nav: [
           { text: "主页", link: "https://langbot.app" },
           { text: "市场", link: "https://space.langbot.app"},
+          { text: "博客", link: "https://blog.langbot.app/zh/" },
           { text: "路线图", link: "https://langbot.featurebase.app/roadmap" },
         ],
 
@@ -358,6 +359,7 @@ export default defineConfig({
         nav: [
           { text: "Home", link: "https://langbot.app" },
           { text: "Market", link: "https://space.langbot.app" },
+          { text: "Blog", link: "https://blog.langbot.app/en/" },
           { text: "Roadmap", link: "https://langbot.featurebase.app/roadmap" },
         ],
 
@@ -624,6 +626,7 @@ export default defineConfig({
         nav: [
           { text: "ホーム", link: "https://langbot.app" },
           { text: "マーケット", link: "https://space.langbot.app" },
+          { text: "ブログ", link: "https://blog.langbot.app/en/" },
           { text: "ロードマップ", link: "https://langbot.featurebase.app/roadmap" },
         ],
 
