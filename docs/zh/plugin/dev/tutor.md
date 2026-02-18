@@ -49,6 +49,10 @@ main.py 中的插件类是每个插件通用的代码，在插件被启动时会
 请您继续阅读本页教程，了解插件的开发流程。
 :::
 
+## AI 辅助开发
+
+- [skills-LangBotplugin](https://github.com/TyperBody/skills-LangBotplugin) - 来自社区成员 [@TyperBody](https://github.com/TyperBody) 贡献的 Skills，使用 AI 快速开发插件，欢迎体验
+
 ## 安装 CLI
 
 请确保您已安装 Python 3.10 或更高版本，并已安装 [uv 包管理器](https://docs.astral.sh/uv/)。

@@ -49,6 +49,10 @@ Each component is a core functional module of your plugin, which can be [added a
 Please continue reading this tutorial to understand the plugin development process.
 :::
 
+## AI-Assisted Development
+
+- [skills-LangBotplugin](https://github.com/TyperBody/skills-LangBotplugin) - Skills contributed by community member [@TyperBody](https://github.com/TyperBody), use AI to quickly develop plugins, welcome to try
+
 ## Installing CLI
 
 Please ensure you have Python 3.10 or higher installed, and have installed the [uv package manager](https://docs.astral.sh/uv/).

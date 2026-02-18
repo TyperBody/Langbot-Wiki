@@ -49,6 +49,10 @@ main.pyのプラグインクラスは各プラグインの共通コードで、�
 このチュートリアルを続けて読んで、プラグイン開発プロセスを理解してください。
 :::
 
+## AI 支援開発
+
+- [skills-LangBotplugin](https://github.com/TyperBody/skills-LangBotplugin) - コミュニティメンバー [@TyperBody](https://github.com/TyperBody) が提供する Skills、AI を使ってプラグインを迅速に開発できます、ぜひお試しください
+
 ## CLIのインストール
 
 Python 3.10以上がインストールされており、[uvパッケージマネージャー](https://docs.astral.sh/uv/)がインストールされていることを確認してください。
