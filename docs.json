@@ -7,6 +7,7 @@
     "light": "#4692dd",
     "dark": "#4692dd"
   },
+  "fontFamily": "Noto Sans SC",
   "logo": {
     "light": "/logo/langbot-logo-0.5x.png",
     "dark": "/logo/langbot-logo-0.5x.png",
