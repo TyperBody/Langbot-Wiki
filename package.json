@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "dev": "mintlify dev"
+    "dev": "npx mintlify dev"
   },
   "dependencies": {
     "mintlify": "^4.2.375"
