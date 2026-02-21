@@ -621,5 +621,8 @@
       }
     ]
   },
-  "description": "Production-grade AI Bot Platform for Discord, Telegram, LINE & WeChat etc."
+  "description": "Production-grade AI Bot Platform for Discord, Telegram, LINE & WeChat etc.",
+  "fonts": {
+    "family": "Source Sans Pro"
+  }
 }
