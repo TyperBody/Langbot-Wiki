@@ -103,6 +103,12 @@
                     ]
                   },
                   {
+                    "group": "Satori (包含QQ)",
+                    "pages": [
+                      "zh/usage/platforms/satori/llonebot"
+                    ]
+                  },
+                  {
                     "group": "QQ 官方机器人",
                     "pages": [
                       "zh/usage/platforms/qq/official_webhook",
