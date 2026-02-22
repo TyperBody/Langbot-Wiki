@@ -621,7 +621,7 @@
       }
     ]
   },
-  "description": "Production-grade AI Bot Platform for Discord, Telegram, LINE & WeChat etc.",
+  "description": "Production-grade No-code AI Bot Platform. Connect DeepSeek, Dify, GPT-4 & Claude to WeChat, Discord, Telegram, Slack, Lark & DingTalk in 5 minutes.",
   "fonts": {
     "family": "Source Sans Pro"
   }
