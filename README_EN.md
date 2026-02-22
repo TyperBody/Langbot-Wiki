@@ -6,7 +6,7 @@
 
 ## Contributing to Documentation
 
-The documentation is generated based on VitePress. Local development requires Node and VitePress installation.
+The documentation is generated based on [Mintlify](https://mintlify.com/). Local development requires Node.js installation.
 
 Clone this repository and execute the following command in the directory to install dependencies:
 
@@ -17,28 +17,32 @@ npm install
 After completion, you can modify the documentation. After modifications, use the following command to start locally:
 
 ```bash
-npm run docs:dev
+npm run dev
+```
+Or use the `mintlify` CLI directly (recommended):
+```bash
+npx mintlify dev
 ```
 
 ### Using Images
 
-Place images in the `docs/assets/image` directory, then reference them using the absolute path when accessed via web, such as:
+Place images in the `images` directory, then reference them using the absolute path (relative to the project root), such as:
 
 ```markdown
-![image](/assets/image/xxx.png)
+![image](/images/xxx.png)
 ```
 
 ### Deployment Details
 
-Currently hosted on Cloudflare Pages. After submission, [@RockChinQ](https://github.com/RockChinQ) updates the branch for automatic deployment.
+Now hosted on Mintlify. Commits to the `main` branch trigger automatic deployment.
 
 ### Some Standardization Guidelines
 
-- Folder and file naming: **Use all lowercase, separate words with `-`, such as** `plugin-intro.md`
-- Sub-file (folder) naming: **No prefix** (i.e., the folder name), such as: in the `deploy` folder, the folder `langbot`, the `manual` file in the `langbot` folder is called `manual.md`
-- Since this is about standardized naming for documentation, any file name can be understood from a tutorial perspective, such as `deploy` being about deployment tutorials
-- Except for configuration file section documents, other pages should not have a table of contents at the top
+- Folder and file naming: **Use all lowercase, separate words with `-`, such as** `plugin-intro.mdx`
+- Sub-file (folder) naming: **No prefix** (i.e., the folder name), such as: in the `deploy` folder, the folder `langbot`, the `manual` file in the `langbot` folder is called `manual.mdx`
+- Documentation files should use `.mdx` format to support Mintlify components.
+- Configure sidebar navigation structure in `docs.json`.
 
 ---
 
-**[中文版 README](README.md)** 
+**[中文版 README](README.md)**
